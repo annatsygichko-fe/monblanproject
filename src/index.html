@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>monblanproject</title>
+  <!-- Flatpickr external datepicker (no INPUT TYPE DATE) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.6.13/flatpickr.min.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.6.13/flatpickr.min.js"></script>
+  <!-- Compiled & minified CSS (Gulp) -->
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+
+
+<body>
+  <header class="header">
+    <div class="header_wr">
+      <div class="logo-block"><img src="images/logo.png" alt="logo"></div>
+      <div class="logo-content">
+        <div class="profile-bar">
+          <div class="profile-info">
+            <div class="profile-name-row">
+              <span class="profile-name">monblanproject</span>
+              <button class="btn-start">Start on 17-02-2016</button>
+            </div>
+            <div class="profile-stats">
+              <span><strong class="stat-posts"></strong> posts</span>
+              <span><strong class="stat-followers"></strong> followers</span>
+              <span><strong class="stat-following"></strong> following</span>
+            </div>
+          </div>
+        </div>
+        <!-- Filter bar -->
+        <div class="filter-bar">
+          <span class="filter-label">Date</span>
+        
+          <div class="date-wrap" id="wrap-from">
+            <input id="date-from" placeholder="from" readonly />
+            <div class="date-icons">
+              <svg class="icon-clear" id="clear-from" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <line x1="18" y1="6" x2="6" y2="18" />
+                <line x1="6" y1="6" x2="18" y2="18" />
+              </svg>
+              <svg class="icon-cal" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M7 11H9V13H7V11ZM7 15H9V17H7V15ZM11 11H13V13H11V11ZM11 15H13V17H11V15ZM15 11H17V13H15V11ZM15 15H17V17H15V15Z"
+                  fill="currentColor" />
+                <path
+                  d="M5 22H19C20.103 22 21 21.103 21 20V6C21 4.897 20.103 4 19 4H17V2H15V4H9V2H7V4H5C3.897 4 3 4.897 3 6V20C3 21.103 3.897 22 5 22ZM19 8L19.001 20H5V8H19Z"
+                  fill="currentColor" />
+              </svg>
+            </div>
+          </div>
+        
+          <span class="dash">-</span>
+        
+          <div class="date-wrap" id="wrap-to">
+            <input id="date-to" placeholder="to" readonly />
+            <div class="date-icons">
+              <svg class="icon-clear" id="clear-to" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <line x1="18" y1="6" x2="6" y2="18" />
+                <line x1="6" y1="6" x2="18" y2="18" />
+              </svg>
+              <svg class="icon-cal" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M7 11H9V13H7V11ZM7 15H9V17H7V15ZM11 11H13V13H11V11ZM11 15H13V17H11V15ZM15 11H17V13H15V11ZM15 15H17V17H15V15Z"
+                  fill="currentColor" />
+                <path
+                  d="M5 22H19C20.103 22 21 21.103 21 20V6C21 4.897 20.103 4 19 4H17V2H15V4H9V2H7V4H5C3.897 4 3 4.897 3 6V20C3 21.103 3.897 22 5 22ZM19 8L19.001 20H5V8H19Z"
+                  fill="currentColor" />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </header>
+  <main>
+    <div class="frame">
+      <div class="view-toggle__wr">
+        <div class="view-toggle">
+          <button class="view-btn active" title="List" onclick="setView('list',this)">
+            <svg width="24" height="22" viewBox="0 0 24 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect width="6" height="6" fill="currentColor" />
+              <rect y="8" width="6" height="6" fill="currentColor" />
+              <rect y="16" width="6" height="6" fill="currentColor" />
+              <rect x="9" y="2" width="15" height="2" fill="currentColor" />
+              <rect x="9" y="10" width="15" height="2" fill="currentColor" />
+              <rect x="9" y="18" width="15" height="2" fill="currentColor" />
+            </svg>
+          </button>
+          <button class="view-btn" title="Grid" onclick="setView('grid',this)">
+            <svg width="24" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect width="6" height="6" fill="currentColor" />
+              <rect x="8" width="6" height="6" fill="currentColor" />
+              <rect x="16" width="6" height="6" fill="currentColor" />
+              <rect y="8" width="6" height="6" fill="currentColor" />
+              <rect x="8" y="8" width="6" height="6" fill="currentColor" />
+              <rect x="16" y="8" width="6" height="6" fill="currentColor" />
+              <rect y="16" width="6" height="6" fill="currentColor" />
+              <rect x="8" y="16" width="6" height="6" fill="currentColor" />
+              <rect x="16" y="16" width="6" height="6" fill="currentColor" />
+            </svg>
+          </button>
+        </div>
+      </div>
+      
+
+      <!-- Post list -->
+      <div class="post-list" id="post-list"></div>
+
+      <!-- Load more  -->
+      <div class="load-more-wrap">
+        <button class="btn-load" id="btn-load">LOAD MORE</button>
+      </div>
+
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer">&nbsp;</div>
+  </footer>
+  <!-- Bundled & minified JS (Gulp) -->
+  <script src="js/main.js"></script>
+</body>
+
+</html>
